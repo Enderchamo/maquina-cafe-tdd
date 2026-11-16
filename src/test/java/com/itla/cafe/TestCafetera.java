@@ -1,0 +1,23 @@
+package com.itla.cafe;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class TestCafetera {
+    @Test
+    public void deberiaDevolverVerdaderoSiExisteCafe() {
+        assertTrue(new Cafetera(10).hasCafe(5));
+    }
+
+    @Test
+    public void deberiaDevolverFalsoSiNoExisteCafe() {
+        assertFalse(new Cafetera(10).hasCafe(11));
+    }
+
+    @Test
+    public void deberiaRestarCafe() {
+        Cafetera c = new Cafetera(10);
+        c.giveCafe(7);
+        assertEquals(3, c.getCantidadCafe());
+    }
+}
